@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: ./calc/client
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    tty:
+      true
+    depends_on:
+      - server
+  server:
+    build:
+      context: ./calc/server
+      dockerfile: Dockerfile
+    ports:
+      - 4000:4000
+    tty:
+      true
