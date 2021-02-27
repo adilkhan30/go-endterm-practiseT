@@ -1,16 +1,17 @@
 syntax = "proto3";
 
 package calculator;
-option go_package = "calc/calculatorpb";
+option go_package = "calc/greet/calculatorpb";
+
+message PrimeNumberDecompositionResponse {
+  int64 prime_factor = 1;
+}
 
 
 message PrimeNumberDecompositionRequest {
   int64 number = 1;
 }
 
-message PrimeNumberDecompositionResponse {
-  int64 prime_factor = 1;
-}
 
 message ComputeAverageRequest {
   int32 number = 1;
@@ -19,8 +20,6 @@ message ComputeAverageRequest {
 message ComputeAverageResponse {
   double average = 1;
 }
-
-
 
 service CalculatorService {
   rpc PrimeNumberDecomposition(PrimeNumberDecompositionRequest) returns (stream PrimeNumberDecompositionResponse) {};

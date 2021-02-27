@@ -9,7 +9,7 @@ import (
 
 	"google.golang.org/grpc"
 )
-import "greet/calculatorpb/calpb"
+import "calc/greet/calculatorpb/calpb"
 
 func main() {
 	fmt.Println("client")
